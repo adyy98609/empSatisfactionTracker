@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+.nav-tabs{
+    background-color:  #19b394;
+}
+.nav{
+    --bs-nav-link-color: hsl(180, 7%, 94%);
+    --bs-nav-link-hover-color: #e4ecec;
+}
+h2{ 
+    padding-left: 25px;
+    padding-top: 10px;
+    color:var(--foreground-light, #909090);
+    content: attr(aria-placeholder);
+}
+img{
+    padding-right: 6px;
+}
