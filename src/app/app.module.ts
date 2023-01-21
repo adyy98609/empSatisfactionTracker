@@ -11,6 +11,7 @@ import { SurveyRendererComponent } from './survey-renderer/survey-renderer.compo
 import { SurveyAnalyticsComponent } from './survey-analytics/survey-analytics.component';
 import { SurveyModule } from "survey-angular-ui";
 import { SurveyService } from './survey.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   {path: 'survey-designer', component: SurveyCreatorComponent},
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
         NgbModule,
         NgbdNavBasic,
         RouterModule,
-        SurveyModule
+        SurveyModule,
+        HttpClientModule
     ]
 })
 export class AppModule { }
