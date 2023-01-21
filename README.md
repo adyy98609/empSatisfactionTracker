@@ -29,4 +29,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Vimeo link
 
-https://vimeo.com/791459510
+https://vimeo.com/791470611/4707d1becb
