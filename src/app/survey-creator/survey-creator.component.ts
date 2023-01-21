@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnChanges, OnInit, SimpleChanges } from "@angular/core";
 import { SurveyCreatorModel } from "survey-creator-core";
 
 const creatorOptions = {
@@ -28,7 +28,7 @@ const defaultJson = {
   templateUrl: './survey-creator.component.html',
   styleUrls: ['./survey-creator.component.css']
 })
-export class SurveyCreatorComponent implements OnInit {
+export class SurveyCreatorComponent implements OnInit,OnChanges {
   surveyCreatorModel: any;
   ngOnInit() {
     const creator = new SurveyCreatorModel(creatorOptions);
@@ -46,6 +46,10 @@ export class SurveyCreatorComponent implements OnInit {
     };
     console.log("Survey json ",creator.text)
     this.surveyCreatorModel = creator;
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
   }
 }
 

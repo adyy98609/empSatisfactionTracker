@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Model } from "survey-core";
 import { SurveyService } from '../survey.service';
-import { json } from "./surveyJson";
-
 
 @Component({
   selector: 'component-survey',
@@ -17,12 +15,21 @@ export class SurveyRendererComponent implements OnInit {
   constructor(private surveyService:SurveyService){}
 
   ngOnInit() {
-      const surveyId ="f500ccf2-b916-48a2-bc86-c57680075674";
-      this.data = this.surveyService.getSurveyData(surveyId).subscribe();
-      const survey = new Model(this.data || json);
+    
+      let surveyObj:any;
+      let latestSurvey = localStorage.getItem('survey-json');
+      if(latestSurvey){
+        surveyObj= JSON.parse(latestSurvey);
+      }
+      this.surveyService.getSurveyData(surveyObj['surveyId']).subscribe((data=>{
+       this.data = data;
+       console.log("Data from service",this.data);
+       const survey = new Model(this.data['data']);
       survey.onComplete.add((sender, options) => {
           console.log(JSON.stringify(sender.data, null, 3));
       });
       this.model = survey;
+      }));
   }
+  
 }

@@ -5,8 +5,8 @@ import { Model } from 'survey-core';
 const surveyJson = {
   elements: [{
     name: "satisfaction-score",
-    title: "How would you describe your experience with our product?",
-    type: "radiogroup",
+    title: "Based on interpersonal relationships, culture and work environment, how satisfied are you with the company's work culture?",
+    type: "rating",
     choices: [
       { value: 5, text: "Fully satisfying" },
       { value: 4, text: "Generally satisfying" },
@@ -16,31 +16,71 @@ const surveyJson = {
     ],
     isRequired: true
   }, {
-    name: "nps-score",
-    title: "On a scale of zero to ten, how likely are you to recommend our product to a friend or colleague?",
+    name: "que-2",
+    title: "Do you think the environment at work helps you strike the right balance between your work life and personal life?",
+    type: "boolean",
+  },
+  {
+    name: "que-3",
+    title: "Do you receive constructive feedback from your manager?",
+    type: "boolean",
+  },
+  {
+    name: "que-4",
+    title: "Does your manager praise you when you have done a good job?",
+    type: "boolean",
+  },
+  {
+    name: "que-5",
+    title: " On a scale of 1 to 5, how much happy are you with current hybrid culture? ",
     type: "rating",
-    rateMin: 0,
-    rateMax: 10,
-  }],
+  },
+  {
+    name: "que-6",
+    title: "Do you wish to express your inputs ?",
+    type: "comment",
+  }
+ 
+],
   showQuestionNumbers: "off",
   completedHtml: "Thank you for your feedback!",
 };
 
 const surveyResults = [{
   "satisfaction-score": 5,
-  "nps-score": 10
+  "que-2": "Yes",
+  "que-3":"Yes",
+  "que-4":"Yes",
+  "que-5":5,
+  "que-6":"No I don't"
 }, {
   "satisfaction-score": 5,
-  "nps-score": 9
+  "que-2": "Yes",
+  "que-3":"Yes",
+  "que-4":"Yes",
+  "que-5":5,
+  "que-6":"No I don't"
 }, {
   "satisfaction-score": 3,
-  "nps-score": 6
+  "que-2": "Yes",
+  "que-3":"Yes",
+  "que-4":"Yes",
+  "que-5":5,
+  "que-6":"No I don't"
 }, {
   "satisfaction-score": 3,
-  "nps-score": 6
+  "que-2": "Yes",
+  "que-3":"Yes",
+  "que-4":"Yes",
+  "que-5":5,
+  "que-6":"No I don't"
 }, {
   "satisfaction-score": 2,
-  "nps-score": 3
+  "que-2": "Yes",
+  "que-3":"Yes",
+  "que-4":"Yes",
+  "que-5":5,
+  "que-6":"No I don't"
 }];
 
 const vizPanelOptions = {
